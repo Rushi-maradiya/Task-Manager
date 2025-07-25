@@ -58,7 +58,7 @@ class Taskcontroller extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'due_date' => 'nullable|date',
-            'list_id' => 'required|exists:task_lists,id',
+            'list_id' => 'required|exists:lists,id',
             'is_completed' => 'boolean'
         ]);
 
@@ -76,7 +76,7 @@ class Taskcontroller extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'due_date' => 'nullable|date',
-            'list_id' => 'required|exists:task_lists,id',
+            'list_id' => 'required|exists:lists,id',
             'is_completed' => 'boolean'
         ]);
 

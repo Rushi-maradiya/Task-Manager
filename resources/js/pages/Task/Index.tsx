@@ -262,9 +262,15 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
                                     />
                                     <Label htmlFor='is_completed'>Completed</Label>
                                 </div>
-                                <Button type='submit' disabled={processing} className='w-full bg-primary hover:bg-primary/90 text-white shadow-lg'>
+                                <Button
+                                    type="submit"
+                                    disabled={processing}
+                                    className="w-full bg-white text-black dark:bg-black dark:text-white hover:opacity-90 shadow-lg"
+                                >
                                     {editingTask ? 'Update' : 'Create'}
                                 </Button>
+
+
                             </form>
                         </DialogContent>
                     </Dialog>
@@ -313,16 +319,23 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
                                                 {task.list.title}
                                             </div>
                                         </td>
+
                                         <td className='p-4 align-middle'>
-                                            {task.due_date ? (      
+                                            {task.due_date ? (
                                                 <div className='flex items-center gap-2'>
-                                                    <Calendar className='h-4 w-4 text-white dark:text-white' />
+                                                    <Calendar className="h-4 w-4 text-blue-500" />
+
                                                     {new Date(task.due_date).toLocaleDateString()}
                                                 </div>
                                             ) : (
                                                 <span className='text-muted-foreground'>No due date</span>
                                             )}
                                         </td>
+
+
+
+
+
                                         <td className='p-4 align-middle'>
                                             {task.is_completed ? (
                                                 <div className='flex items-center gap-2 text-green-500'>

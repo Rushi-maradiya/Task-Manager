@@ -27,4 +27,5 @@ yarn-error.log
 *.sqlite*
 node_modules
 .env
-.env.exmple
+.env.example
+.env.example
