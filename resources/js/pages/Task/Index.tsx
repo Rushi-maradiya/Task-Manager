@@ -250,7 +250,7 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
                                 <div className='space-y-2'>
                                     <Label htmlFor='due_date'>Due Date</Label>
                                     <Input id='due_date' type='date' value={data.due_date} onChange={(e) => setData('due_date', e.target.value)}
-                                        className='focus:ring-2 focus:ring-primary' />
+                                        className='focus:ring-2 focus:ring-primary text-blue' />
                                 </div>
                                 <div className="flex items-center space-x-2">
                                     <input
@@ -263,13 +263,11 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
                                     <Label htmlFor='is_completed'>Completed</Label>
                                 </div>
                                 <Button
-                                    type="submit"
+                                    type='submit'
                                     disabled={processing}
-                                    className="w-full bg-white text-black dark:bg-black dark:text-white hover:opacity-90 shadow-lg"
-                                >
+                                    className='w-full bg-primary hover:bg-primary/90 dark:bg-black dark:hover:bg-black/90 text-white shadow-lg'>
                                     {editingTask ? 'Update' : 'Create'}
                                 </Button>
-
 
                             </form>
                         </DialogContent>
@@ -323,7 +321,7 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
                                         <td className='p-4 align-middle'>
                                             {task.due_date ? (
                                                 <div className='flex items-center gap-2'>
-                                                    <Calendar className="h-4 w-4 text-blue-500" />
+                                                    <Calendar className="h-4 w-4" />
 
                                                     {new Date(task.due_date).toLocaleDateString()}
                                                 </div>

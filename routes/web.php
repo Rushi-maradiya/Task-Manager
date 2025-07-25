@@ -4,6 +4,7 @@ use App\Http\Controllers\Taskcontroller;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Listcontroller;
+use App\Http\Controllers\DashboardController;
 
 
 Route::get('/', function () {
@@ -13,9 +14,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('lists',Listcontroller::class); 
     Route::resource('tasks', Taskcontroller::class);
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
+   Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 });
 
 require __DIR__.'/settings.php';
