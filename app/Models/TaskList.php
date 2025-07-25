@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BlongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TaskList extends Model
@@ -21,7 +21,7 @@ class TaskList extends Model
         return $this->HasMany(Task::class);
     }
 
-     public function user(): BelongsTo
+     public function user(): belongsTo
     {
         return $this->BelongsTo(USer::class);
     }

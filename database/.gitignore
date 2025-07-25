@@ -1,1 +1,4 @@
 *.sqlite*
+node_modules
+.env
+.env.exmple

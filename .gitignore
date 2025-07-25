@@ -22,3 +22,9 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+
+*.sqlite*
+node_modules
+.env
+.env.exmple
