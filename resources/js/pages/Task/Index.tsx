@@ -247,11 +247,23 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
                                     </Select>
                                 </div>
 
-                                <div className='space-y-2'>
-                                    <Label htmlFor='due_date'>Due Date</Label>
-                                    <Input id='due_date' type='date' value={data.due_date} onChange={(e) => setData('due_date', e.target.value)}
-                                        className='focus:ring-2 focus:ring-primary text-blue' />
-                                </div>
+                               <div className="space-y-2">
+  <Label htmlFor="due_date" className="text-gray-800 dark:text-gray-200">
+    Due Date
+  </Label>
+  <Input
+    id="due_date"
+    type="date"
+    value={data.due_date}
+    onChange={(e) => setData('due_date', e.target.value)}
+    className="w-full border border-gray-300 dark:border-gray-600
+               bg-white dark:bg-gray-800
+               text-gray-900 dark:text-gray-100
+               focus:outline-none focus:ring-2 focus:ring-primary
+               rounded-md px-3 py-2 shadow-sm"
+  />
+</div>
+
                                 <div className="flex items-center space-x-2">
                                     <input
                                         type="checkbox"
@@ -263,11 +275,15 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
                                     <Label htmlFor='is_completed'>Completed</Label>
                                 </div>
                                 <Button
-                                    type='submit'
+                                    type="submit"
                                     disabled={processing}
-                                    className='w-full bg-primary hover:bg-primary/90 dark:bg-black dark:hover:bg-black/90 text-white shadow-lg'>
+                                    className="w-full bg-primary text-white hover:bg-primary/90 
+             dark:bg-white dark:text-black dark:hover:bg-gray-200 
+             shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
                                     {editingTask ? 'Update' : 'Create'}
                                 </Button>
+
 
                             </form>
                         </DialogContent>
